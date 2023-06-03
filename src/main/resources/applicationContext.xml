@@ -15,7 +15,7 @@
     <bean id="popBean" class="com.klunniy.springcourse.model.impl.PopMusic"/>
     <bean id="classicalBean" class="com.klunniy.springcourse.model.impl.ClassicalMusic"/>
 
-    <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="singleton">
+    <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">
         <!--<constructor-arg ref="musicBean"/>-->
 <!--        <property name="music" ref="musicBean"/>-->
         <constructor-arg>
@@ -29,7 +29,7 @@
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
-    <bean id="ukraineFootball" class="com.klunniy.springcourse.model.impl.UkraineFootball">
+    <bean id="ukraineFootball" class="com.klunniy.springcourse.model.impl.UkraineFootball" scope="prototype">
         <property name="name" value="VICTORY"/>
     </bean>
 </beans>
