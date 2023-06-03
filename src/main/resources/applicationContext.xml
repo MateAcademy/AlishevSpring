@@ -7,16 +7,29 @@
         http://www.springframework.org/schema/context
         http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="musicBean"
-          class="com.klunniy.springcourse.RockMusic">
+    <context:property-placeholder location="musicPlayer.properties"/>
+
+    <bean id="rockBean" class="com.klunniy.springcourse.model.impl.RockMusic"/>
         <!--<constructor-arg value="Serhii"/> -->
+
+    <bean id="popBean" class="com.klunniy.springcourse.model.impl.PopMusic"/>
+    <bean id="classicalBean" class="com.klunniy.springcourse.model.impl.ClassicalMusic"/>
+
+    <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer">
+        <!--<constructor-arg ref="musicBean"/>-->
+<!--        <property name="music" ref="musicBean"/>-->
+        <constructor-arg>
+            <list>
+                <ref bean="rockBean" />
+                <ref bean="popBean" />
+                <ref bean="classicalBean" />
+            </list>
+        </constructor-arg>
+        <property name="name" value="${musicPlayer.name}"/>
+        <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
-    <bean id="musicPlayer"
-          class="com.klunniy.springcourse.MusicPlayer">
-        <!--<constructor-arg ref="musicBean"/>-->
-        <property name="music" ref="musicBean"/>
-        <property name="name" value="some name"/>
-        <property name="volume" value="50"/>
+    <bean id="ukraineFootball" class="com.klunniy.springcourse.model.impl.UkraineFootball">
+        <property name="name" value="VICTORY"/>
     </bean>
 </beans>

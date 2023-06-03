@@ -1,4 +1,6 @@
-package com.klunniy.springcourse;
+package com.klunniy.springcourse.model.impl;
+
+import com.klunniy.springcourse.model.Music;
 
 /**
  * @author Serhii Klunniy

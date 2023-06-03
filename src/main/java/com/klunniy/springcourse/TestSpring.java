@@ -1,5 +1,6 @@
 package com.klunniy.springcourse;
 
+import com.klunniy.springcourse.model.impl.UkraineFootball;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -7,7 +8,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class TestSpring {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext(
+        var context = new ClassPathXmlApplicationContext(
                 "applicationContext.xml"
         );
 
@@ -15,10 +16,20 @@ public class TestSpring {
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 //        musicPlayer.playMusic();
 
-        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-        musicPlayer.playMusic();
-        System.out.println(musicPlayer.getName());
-        System.out.println(musicPlayer.getVolume());
+//        MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+//        musicPlayer.playMusic();
+//        System.out.println(musicPlayer.getName());
+//        System.out.println(musicPlayer.getVolume());
+
+
+        var ukraineFootball = context.getBean("ukraineFootball", UkraineFootball.class);
+        System.out.println(ukraineFootball.play());
+
+        ukraineFootball.setName("ZSU");
+
+        var ukraineFootball2 = context.getBean("ukraineFootball", UkraineFootball.class);
+        System.out.println(ukraineFootball2.play());
+
         context.close();
     }
 }

@@ -1,46 +1,30 @@
 package com.klunniy.springcourse;
 
+import com.klunniy.springcourse.model.Music;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+import java.util.List;
+
 /**
  * @author Serhii Klunniy
  */
+@Data
+@NoArgsConstructor
 public class MusicPlayer {
-    private Music music;
+    private List<Music> music;
     private String name;
     private int volume;
 
-    public Music getMusic() {
-        return music;
-    }
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public MusicPlayer() {
-    }
-
     //IoC
-    public MusicPlayer(Music music) {
+    public MusicPlayer(List<Music> music) {
         this.music = music;
     }
 
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        for (Music m : music) {
+            System.out.println("Playing: " + m.getSong());
+        }
     }
 
-    public void setMusic(Music music) {
-        this.music = music;
-    }
 }

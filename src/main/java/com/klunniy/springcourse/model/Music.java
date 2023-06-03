@@ -1,4 +1,4 @@
-package com.klunniy.springcourse;
+package com.klunniy.springcourse.model;
 
 /**
  * @author Serhii Klunniy
