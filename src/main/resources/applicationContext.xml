@@ -14,6 +14,7 @@
 
     <bean id="musicPlayer"
           class="com.klunniy.springcourse.MusicPlayer">
-        <constructor-arg ref="musicBean"/>
+        <!--<constructor-arg ref="musicBean"/>-->
+        <property name="music" ref="musicBean"></property>
     </bean>
 </beans>
