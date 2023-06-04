@@ -16,7 +16,8 @@
     <bean id="classicalBean"
           class="com.klunniy.springcourse.model.impl.ClassicalMusic"
           init-method="doMyInit"
-          destroy-method="doMyDestroy"/>
+          destroy-method="doMyDestroy"
+          scope="prototype"/>
 
     <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">
         <!--<constructor-arg ref="musicBean"/>-->
