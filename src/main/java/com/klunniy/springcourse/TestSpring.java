@@ -19,6 +19,8 @@ public class TestSpring {
         var classicalBean = context.getBean("classicalBean", ClassicalMusic.class);
         System.out.println(classicalBean.getSong());
 
+        var classicalBean2 = context.getBean("classicalBean", ClassicalMusic.class);
+
 //        Music music = context.getBean("musicBean", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
 //        musicPlayer.playMusic();
