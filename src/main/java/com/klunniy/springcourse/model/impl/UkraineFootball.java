@@ -15,4 +15,12 @@ public class UkraineFootball implements PlayFootball {
     public String play() {
         return "Kiev football team: " + name;
     }
+
+    public void doMyInit() {
+        System.out.println("init method");
+    }
+
+    public void doMyDestroy() {
+        System.out.println("destroy method");
+    }
 }

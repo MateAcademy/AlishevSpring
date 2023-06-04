@@ -10,26 +10,32 @@
     <context:property-placeholder location="musicPlayer.properties"/>
 
     <bean id="rockBean" class="com.klunniy.springcourse.model.impl.RockMusic"/>
-        <!--<constructor-arg value="Serhii"/> -->
+    <!--<constructor-arg value="Serhii"/> -->
 
     <bean id="popBean" class="com.klunniy.springcourse.model.impl.PopMusic"/>
-    <bean id="classicalBean" class="com.klunniy.springcourse.model.impl.ClassicalMusic"/>
+    <bean id="classicalBean"
+          class="com.klunniy.springcourse.model.impl.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"/>
 
     <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">
         <!--<constructor-arg ref="musicBean"/>-->
-<!--        <property name="music" ref="musicBean"/>-->
+        <!--        <property name="music" ref="musicBean"/>-->
         <constructor-arg>
             <list>
-                <ref bean="rockBean" />
-                <ref bean="popBean" />
-                <ref bean="classicalBean" />
+                <ref bean="rockBean"/>
+                <ref bean="popBean"/>
+                <ref bean="classicalBean"/>
             </list>
         </constructor-arg>
         <property name="name" value="${musicPlayer.name}"/>
         <property name="volume" value="${musicPlayer.volume}"/>
     </bean>
 
-    <bean id="ukraineFootball" class="com.klunniy.springcourse.model.impl.UkraineFootball" scope="prototype">
+    <bean id="ukraineFootball"
+          class="com.klunniy.springcourse.model.impl.UkraineFootball" scope="prototype"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy">
         <property name="name" value="VICTORY"/>
     </bean>
 </beans>
