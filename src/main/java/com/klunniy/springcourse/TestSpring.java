@@ -1,6 +1,7 @@
 package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.model.impl.ClassicalMusic;
+import com.klunniy.springcourse.model.impl.OldMusic;
 import com.klunniy.springcourse.model.impl.UkraineFootball;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -16,10 +17,14 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        var classicalBean = context.getBean("classicalBean", ClassicalMusic.class);
-        System.out.println(classicalBean.getSong());
+        OldMusic oldMusic = context.getBean("oldMusic", OldMusic.class);
+        System.out.println(oldMusic.getSong());
 
-        var classicalBean2 = context.getBean("classicalBean", ClassicalMusic.class);
+
+//        var classicalBean = context.getBean("classicalBean", ClassicalMusic.class);
+//        System.out.println(classicalBean.getSong());
+//
+//        var classicalBean2 = context.getBean("classicalBean", ClassicalMusic.class);
 
 //        Music music = context.getBean("musicBean", Music.class);
 //        MusicPlayer musicPlayer = new MusicPlayer(music);
