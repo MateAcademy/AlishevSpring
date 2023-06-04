@@ -2,6 +2,7 @@ package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.model.impl.ClassicalMusic;
 import com.klunniy.springcourse.model.impl.OldMusic;
+import com.klunniy.springcourse.model.impl.RapMusic;
 import com.klunniy.springcourse.model.impl.UkraineFootball;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -20,6 +21,8 @@ public class TestSpring {
         OldMusic oldMusic = context.getBean("musicBean", OldMusic.class);
         System.out.println(oldMusic.getSong());
 
+        RapMusic rapMusic = context.getBean("rapMusic", RapMusic.class);
+        System.out.println(rapMusic.getSong());
 
 //        var classicalBean = context.getBean("classicalBean", ClassicalMusic.class);
 //        System.out.println(classicalBean.getSong());
