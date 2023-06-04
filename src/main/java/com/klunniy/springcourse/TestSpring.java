@@ -17,7 +17,7 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        OldMusic oldMusic = context.getBean("oldMusic", OldMusic.class);
+        OldMusic oldMusic = context.getBean("musicBean", OldMusic.class);
         System.out.println(oldMusic.getSong());
 
 
