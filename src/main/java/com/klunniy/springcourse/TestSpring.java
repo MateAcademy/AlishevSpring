@@ -18,7 +18,7 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
+        var classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
         System.out.println(classicalMusic.getSong());
 
 
