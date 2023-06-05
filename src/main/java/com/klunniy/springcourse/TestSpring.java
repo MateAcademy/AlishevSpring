@@ -18,11 +18,15 @@ public class TestSpring {
                 "applicationContext.xml"
         );
 
-        OldMusic oldMusic = context.getBean("musicBean", OldMusic.class);
-        System.out.println(oldMusic.getSong());
+        ClassicalMusic classicalMusic = context.getBean("classicalMusic", ClassicalMusic.class);
+        System.out.println(classicalMusic.getSong());
 
-        RapMusic rapMusic = context.getBean("rapMusic", RapMusic.class);
-        System.out.println(rapMusic.getSong());
+
+//        OldMusic oldMusic = context.getBean("musicBean", OldMusic.class);
+//        System.out.println(oldMusic.getSong());
+//
+//        RapMusic rapMusic = context.getBean("rapMusic", RapMusic.class);
+//        System.out.println(rapMusic.getSong());
 
 //        var classicalBean = context.getBean("classicalBean", ClassicalMusic.class);
 //        System.out.println(classicalBean.getSong());

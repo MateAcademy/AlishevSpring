@@ -14,12 +14,12 @@
     <!--<constructor-arg value="Serhii"/> -->
 
     <bean id="popBean" class="com.klunniy.springcourse.model.impl.PopMusic"/>
-    <bean id="classicalBean"
-          class="com.klunniy.springcourse.model.impl.ClassicalMusic"
-          init-method="doMyInit"
-          destroy-method="doMyDestroy"
-          scope="prototype"
-          factory-method="getClassicalMusic"/>
+<!--    <bean id="classicalBean"-->
+<!--          class="com.klunniy.springcourse.model.impl.ClassicalMusic"-->
+<!--          init-method="doMyInit"-->
+<!--          destroy-method="doMyDestroy"-->
+<!--          scope="prototype"-->
+<!--          factory-method="getClassicalMusic"/>-->
 
     <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">
         <!--<constructor-arg ref="musicBean"/>-->
