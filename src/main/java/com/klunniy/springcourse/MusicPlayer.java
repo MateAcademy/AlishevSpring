@@ -2,6 +2,7 @@ package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.model.Music;
 import com.klunniy.springcourse.model.impl.ClassicalMusic;
+import com.klunniy.springcourse.model.impl.RockMusic;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,12 +22,14 @@ public class MusicPlayer {
 //    private String name;
 //    private int volume;
 
-    @Autowired
-    @Qualifier("classicalMusic")
-    private Music music;
+    private ClassicalMusic classicalMusic;
 
-    public void setMusic(@Qualifier("classicalMusic")Music music) {
-        this.music = music;
+    private RockMusic rockMusic;
+
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
+        this.classicalMusic = classicalMusic;
+        this.rockMusic = rockMusic;
     }
 
     //IoC
@@ -35,7 +38,8 @@ public class MusicPlayer {
 //    }
 //
     public void playMusic() {
-        System.out.println("Playing: " + music.getSong());
+        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + rockMusic.getSong());
     }
 
 }
