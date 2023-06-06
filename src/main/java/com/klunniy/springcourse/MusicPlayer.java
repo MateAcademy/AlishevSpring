@@ -23,8 +23,13 @@ public class MusicPlayer {
 
     private Music music;
 
-    @Autowired
+
     public MusicPlayer(@Qualifier("classicalMusic") Music music) {
+        this.music = music;
+    }
+
+    @Autowired
+    public void setMusic(@Qualifier("classicalMusic")Music music) {
         this.music = music;
     }
 
