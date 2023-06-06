@@ -18,12 +18,12 @@ import java.util.List;
 public class MusicPlayer {
 //    private List<Music> music;
 //    private String name;
-    private int volume;
+//    private int volume;
 
-    private Music classicalMusic;
+    private ClassicalMusic classicalMusic;
 
     @Autowired
-    public MusicPlayer(Music classicalMusic) {
+    public MusicPlayer(ClassicalMusic classicalMusic) {
         this.classicalMusic = classicalMusic;
     }
 
@@ -32,10 +32,8 @@ public class MusicPlayer {
 //        this.music = music;
 //    }
 //
-//    public void playMusic() {
-//        for (Music m : music) {
-//            System.out.println("Playing: " + m.getSong());
-//        }
-//    }
+    public void playMusic() {
+        System.out.println("Playing: " + classicalMusic.getSong());
+    }
 
 }
