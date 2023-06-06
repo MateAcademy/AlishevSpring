@@ -21,19 +21,19 @@
 <!--          scope="prototype"-->
 <!--          factory-method="getClassicalMusic"/>-->
 
-    <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">
-        <!--<constructor-arg ref="musicBean"/>-->
-        <!--        <property name="music" ref="musicBean"/>-->
-        <constructor-arg>
-            <list>
-                <ref bean="rockBean"/>
-                <ref bean="popBean"/>
-                <ref bean="classicalBean"/>
-            </list>
-        </constructor-arg>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
+<!--    <bean id="musicPlayer" class="com.klunniy.springcourse.MusicPlayer" scope="prototype">-->
+<!--        &lt;!&ndash;<constructor-arg ref="musicBean"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        <property name="music" ref="musicBean"/>&ndash;&gt;-->
+<!--        <constructor-arg>-->
+<!--            <list>-->
+<!--                <ref bean="rockBean"/>-->
+<!--                <ref bean="popBean"/>-->
+<!--                <ref bean="classicalBean"/>-->
+<!--            </list>-->
+<!--        </constructor-arg>-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--    </bean>-->
 
     <bean id="ukraineFootball"
           class="com.klunniy.springcourse.model.impl.UkraineFootball" scope="prototype"

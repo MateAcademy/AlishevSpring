@@ -5,6 +5,7 @@ import com.klunniy.springcourse.model.impl.ClassicalMusic;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
@@ -13,13 +14,19 @@ import java.util.List;
  */
 @Data
 @NoArgsConstructor
+@Component
 public class MusicPlayer {
     private List<Music> music;
     private String name;
     private int volume;
 
-    @Autowired
+
     private ClassicalMusic classicalMusic;
+
+    @Autowired
+    public MusicPlayer(ClassicalMusic classicalMusic) {
+        this.classicalMusic = classicalMusic;
+    }
 
     //IoC
     public MusicPlayer(List<Music> music) {
