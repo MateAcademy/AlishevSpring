@@ -21,14 +21,10 @@ public class MusicPlayer {
 //    private String name;
 //    private int volume;
 
+    @Autowired
+    @Qualifier("classicalMusic")
     private Music music;
 
-
-    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
-        this.music = music;
-    }
-
-    @Autowired
     public void setMusic(@Qualifier("classicalMusic")Music music) {
         this.music = music;
     }
