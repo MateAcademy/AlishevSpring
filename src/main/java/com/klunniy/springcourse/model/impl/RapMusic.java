@@ -6,7 +6,6 @@ import org.springframework.stereotype.Component;
 /**
  * @author Serhii Klunniy
  */
-@Component
 public class RapMusic implements Music {
     @Override
     public String getSong() {
