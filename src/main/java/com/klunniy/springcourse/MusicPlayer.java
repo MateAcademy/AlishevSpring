@@ -16,27 +16,26 @@ import java.util.List;
 @NoArgsConstructor
 @Component
 public class MusicPlayer {
-    private List<Music> music;
-    private String name;
+//    private List<Music> music;
+//    private String name;
     private int volume;
 
-
-    private ClassicalMusic classicalMusic;
+    private Music classicalMusic;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic) {
+    public MusicPlayer(Music classicalMusic) {
         this.classicalMusic = classicalMusic;
     }
 
     //IoC
-    public MusicPlayer(List<Music> music) {
-        this.music = music;
-    }
-
-    public void playMusic() {
-        for (Music m : music) {
-            System.out.println("Playing: " + m.getSong());
-        }
-    }
+//    public MusicPlayer(List<Music> music) {
+//        this.music = music;
+//    }
+//
+//    public void playMusic() {
+//        for (Music m : music) {
+//            System.out.println("Playing: " + m.getSong());
+//        }
+//    }
 
 }
