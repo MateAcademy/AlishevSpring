@@ -5,6 +5,7 @@ import com.klunniy.springcourse.model.impl.ClassicalMusic;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -20,11 +21,11 @@ public class MusicPlayer {
 //    private String name;
 //    private int volume;
 
-    private ClassicalMusic classicalMusic;
+    private Music music;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic) {
-        this.classicalMusic = classicalMusic;
+    public MusicPlayer(@Qualifier("classicalMusic") Music music) {
+        this.music = music;
     }
 
     //IoC
@@ -33,7 +34,7 @@ public class MusicPlayer {
 //    }
 //
     public void playMusic() {
-        System.out.println("Playing: " + classicalMusic.getSong());
+        System.out.println("Playing: " + music.getSong());
     }
 
 }
