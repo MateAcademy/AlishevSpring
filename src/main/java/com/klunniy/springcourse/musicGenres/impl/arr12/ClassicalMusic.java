@@ -4,6 +4,7 @@ import com.klunniy.springcourse.musicGenres.Music;
 import com.klunniy.springcourse.song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
@@ -14,6 +15,11 @@ import java.util.List;
 @Component
 public class ClassicalMusic implements MusicB {
 
+    @Value("${musicPlayer.name}")
+    private String name;
+
+    @Value("${musicPlayer.volume}")
+    private int volume;
     @Autowired
     @Qualifier("classicalList")
     private List<Song> songList;
@@ -23,5 +29,7 @@ public class ClassicalMusic implements MusicB {
         for (Song song : songList) {
             song.playSong();
         }
+
+        System.out.println("name=" + name + "volume=" + volume + "\n");
     }
 }
