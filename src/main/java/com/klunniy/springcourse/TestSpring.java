@@ -12,6 +12,7 @@ public class TestSpring {
         try (var context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
             MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
             musicPlayer.playMusic(MusicEnum.CLASSICAL);
+            musicPlayer.playMusic(MusicEnum.ROCK);
         }
     }
 
