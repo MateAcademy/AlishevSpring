@@ -1,6 +1,5 @@
-package com.klunniy.springcourse.musicGenres.impl;
+package com.klunniy.springcourse.musicGenres.impl.arr12;
 
-import com.klunniy.springcourse.musicGenres.Music;
 import com.klunniy.springcourse.song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -12,14 +11,17 @@ import java.util.List;
  * @author Serhii Klunniy
  */
 @Component
-public class ClassicalMusic implements Music {
+public class RockMusic implements MusicB {
 
     @Autowired
-    @Qualifier("nameList")
+    @Qualifier("rocklList")
     private List<Song> songList;
 
+
     @Override
-    public String getSong() {
-        return null;
+    public void playSong() {
+        for (Song song : songList) {
+            song.playSong();
+        }
     }
 }

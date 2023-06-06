@@ -1,17 +1,16 @@
 package com.klunniy.springcourse.song.impl;
 
 import com.klunniy.springcourse.musicGenres.Music;
+import com.klunniy.springcourse.song.Song;
+import org.springframework.stereotype.Component;
 
-public class Rock1 implements Music {
+@Component
+public class Rock1 implements Song {
     private String nameSong = "Rock1-Song";
 
-    @Override
     public void playSong() {
         System.out.println(nameSong);
     }
 
-    @Override
-    public String getSong() {
-        return null;
-    }
+
 }
