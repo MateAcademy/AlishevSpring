@@ -30,7 +30,6 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume2}")
     private int volume;
 
-
     private ClassicalMusic classicalMusic;
 
     private RockMusic rockMusic;

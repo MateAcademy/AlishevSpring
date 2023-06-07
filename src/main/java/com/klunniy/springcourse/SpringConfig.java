@@ -1,16 +1,16 @@
-package com.klunniy.springcourse.musicGenres.impl.arr12;
+package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.song.Song;
 import com.klunniy.springcourse.song.impl.*;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.*;
 
 import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-public class CollectionConfig {
+@PropertySource("classpath:musicPlayer.properties")
+@ComponentScan("com.klunniy.springcourse")
+public class SpringConfig {
 
     @Bean
     public List<Song> classicalList() {
