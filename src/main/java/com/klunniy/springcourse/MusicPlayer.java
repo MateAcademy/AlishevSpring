@@ -21,7 +21,7 @@ import javax.annotation.PreDestroy;
 @Data
 @NoArgsConstructor
 @Component
-@Scope("singleton")
+@Scope("prototype")
 public class MusicPlayer {
 
     @Value("${musicPlayer.name2}")
