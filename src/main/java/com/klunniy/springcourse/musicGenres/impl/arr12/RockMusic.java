@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 import java.util.List;
 
 /**
@@ -31,5 +33,15 @@ public class RockMusic implements MusicB {
             song.playSong();
         }
         System.out.println("name=" + name + "volume=" + volume + "\n");
+    }
+
+    @PostConstruct
+    private void doMyInit(){
+        System.out.println("Doing my initialization RockMusic");
+    }
+
+    @PreDestroy
+    private void doMyDestroy() {
+        System.out.println("Doing my destruction RockMusic");
     }
 }

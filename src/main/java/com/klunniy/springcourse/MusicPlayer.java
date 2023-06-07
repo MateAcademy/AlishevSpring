@@ -8,7 +8,12 @@ import com.klunniy.springcourse.song.Song;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
+
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
 
 /**
  * @author Serhii Klunniy
@@ -16,7 +21,15 @@ import org.springframework.stereotype.Component;
 @Data
 @NoArgsConstructor
 @Component
+@Scope("singleton")
 public class MusicPlayer {
+
+    @Value("${musicPlayer.name2}")
+    private String name;
+
+    @Value("${musicPlayer.volume2}")
+    private int volume;
+
 
     private ClassicalMusic classicalMusic;
 
@@ -32,6 +45,21 @@ public class MusicPlayer {
         if (musicEnum == MusicEnum.ROCK)
             rockMusic.playSong();
         else classicalMusic.playSong();
+    }
+
+    public void musicPlayerConstants() {
+        System.out.println("name=" + name);
+        System.out.println("volume=" + volume);
+    }
+
+    @PostConstruct
+    private void doMyInit(){
+        System.out.println("Doing my initialization MusicPlayer");
+    }
+
+    @PreDestroy
+    private void doMyDestroy() {
+        System.out.println("Doing my destruction MusicPlayer");
     }
 
 }
