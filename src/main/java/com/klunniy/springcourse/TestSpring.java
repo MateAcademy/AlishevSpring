@@ -10,7 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class TestSpring {
     public static void main(String[] args) {
         try (var context = new ClassPathXmlApplicationContext("applicationContext.xml")) {
-            //MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+            MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
+            MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
 //            musicPlayer.playMusic(MusicEnum.CLASSICAL);
             //musicPlayer.playMusic(MusicEnum.ROCK);
 
