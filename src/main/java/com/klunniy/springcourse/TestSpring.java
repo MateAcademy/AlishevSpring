@@ -13,12 +13,12 @@ public class TestSpring {
     public static void main(String[] args) {
         try (var context = new AnnotationConfigApplicationContext(SpringConfig.class)) {
             MusicPlayer musicPlayer = context.getBean("musicPlayer", MusicPlayer.class);
-//            MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
-
-//            System.out.println(musicPlayer == musicPlayer2);
             musicPlayer.playMusic(MusicEnum.CLASSICAL);
-            //musicPlayer.playMusic(MusicEnum.ROCK);
+            musicPlayer.playMusic(MusicEnum.ROCK);
 
+//            MusicPlayer musicPlayer2 = context.getBean("musicPlayer", MusicPlayer.class);
+//            System.out.println(musicPlayer == musicPlayer2);
+            //musicPlayer.playMusic(MusicEnum.ROCK);
             //musicPlayer.musicPlayerConstants();
         }
     }
