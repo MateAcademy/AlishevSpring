@@ -1,9 +1,11 @@
 package com.klunniy.springcourse.musicGenres.impl.arr12;
 
+import com.klunniy.springcourse.musicGenres.MusicB;
 import com.klunniy.springcourse.song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -14,6 +16,7 @@ import java.util.List;
  * @author Serhii Klunniy
  */
 @Component
+@Scope("singleton")
 public class RockMusic implements MusicB {
 
     @Value("${musicPlayer.name}")

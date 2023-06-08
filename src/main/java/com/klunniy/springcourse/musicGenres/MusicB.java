@@ -1,4 +1,4 @@
-package com.klunniy.springcourse.musicGenres.impl.arr12;
+package com.klunniy.springcourse.musicGenres;
 
 /**
  * @author Serhii Klunniy
