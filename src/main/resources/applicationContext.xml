@@ -10,12 +10,12 @@
 <!--    <context:property-placeholder location="classpath:musicPlayer.properties"/>-->
 <!--    <context:component-scan base-package="com.klunniy.springcourse"/>-->
 
-<!--    <bean id="rockBean" class="com.klunniy.springcourse.typeOfMusic.impl.RockMusic"/>-->
+<!--    <bean id="rockBean" class="com.klunniy.springcourse.musicGenres.impl.RockGenres"/>-->
     <!--<constructor-arg value="Serhii"/> -->
 
-<!--    <bean id="popBean" class="com.klunniy.springcourse.typeOfMusic.impl.PopMusic"/>-->
+<!--    <bean id="popBean" class="com.klunniy.springcourse.musicGenres.impl.PopGenres"/>-->
 <!--    <bean id="classicalBean"-->
-<!--          class="com.klunniy.springcourse.typeOfMusic.impl.ClassicalMusic"-->
+<!--          class="com.klunniy.springcourse.musicGenres.impl.ClassicalGenres"-->
 <!--          init-method="doMyInit"-->
 <!--          destroy-method="doMyDestroy"-->
 <!--          scope="prototype"-->
@@ -36,7 +36,7 @@
 <!--    </bean>-->
 
 <!--    <bean id="ukraineFootball"-->
-<!--          class="com.klunniy.springcourse.typeOfMusic.impl.UkraineFootball" scope="prototype"-->
+<!--          class="com.klunniy.springcourse.musicGenres.impl.UkraineFootball" scope="prototype"-->
 <!--          init-method="doMyInit"-->
 <!--          destroy-method="doMyDestroy">-->
 <!--        <property name="name" value="VICTORY"/>-->

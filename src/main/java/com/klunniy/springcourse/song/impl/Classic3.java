@@ -4,8 +4,6 @@ import com.klunniy.springcourse.song.Song;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
-@Component
-@Scope("singleton")
 public class Classic3 implements Song {
     private String nameSong = "Classic3-Song";
 

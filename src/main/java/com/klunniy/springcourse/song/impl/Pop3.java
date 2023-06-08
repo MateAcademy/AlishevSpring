@@ -1,13 +1,9 @@
 package com.klunniy.springcourse.song.impl;
 
 import com.klunniy.springcourse.song.Song;
-import org.springframework.stereotype.Component;
 
-/**
- * @author Serhii Klunniy
- */
-public class Rock2 implements Song {
-    private String nameSong = "Rock2-Song";
+public class Pop3 implements Song {
+    private String nameSong = "Pop3-Song";
 
     public void playSong() {
         System.out.println(nameSong);

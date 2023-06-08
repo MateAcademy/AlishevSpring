@@ -1,17 +1,11 @@
 package com.klunniy.springcourse.player;
 
-import com.klunniy.springcourse.enums.MusicEnum;
-import com.klunniy.springcourse.typeOfMusic.MusicB;
+import com.klunniy.springcourse.musicGenres.MusicGenres;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
-import javax.annotation.PreDestroy;
+import java.util.List;
+import java.util.Random;
 
 /**
  * @author Serhii Klunniy
@@ -20,41 +14,35 @@ import javax.annotation.PreDestroy;
 @NoArgsConstructor
 public class MusicPlayer {
 
-    @Value("${musicPlayer.name2}")
-    private String name;
+    private List<MusicGenres> music;
 
-    @Value("${musicPlayer.volume2}")
-    private int volume;
-
-    private MusicB music1;
-
-    private MusicB music2;
-
-    public MusicPlayer(@Qualifier("classicalMusic") MusicB music1,
-                       @Qualifier("rockMusic") MusicB music2) {
-        this.music1 = music1;
-        this.music2 = music2;
+    public MusicPlayer(List<MusicGenres> music) {
+        this.music = music;
     }
 
-    public void playMusic(MusicEnum musicEnum) {
-        if (musicEnum == MusicEnum.ROCK)
-            music2.playSong();
-        else music1.playSong();
+    public void playMusicGenres() {
+        MusicGenres randomElement = getRandomElement(music);
+        getRandomSong(randomElement);
     }
 
-    public void musicPlayerConstants() {
-        System.out.println("name=" + name);
-        System.out.println("volume=" + volume);
+    private <T> T getRandomElement(List<T> list) {
+        Random random = new Random();
+        int randomIndex = random.nextInt(list.size());
+        return list.get(randomIndex);
     }
 
-    @PostConstruct
-    private void doMyInit(){
-        System.out.println("Doing my initialization MusicPlayer");
+    private void getRandomSong(MusicGenres musicGenres) {
+        musicGenres.playMusic();
     }
 
-    @PreDestroy
-    private void doMyDestroy() {
-        System.out.println("Doing my destruction MusicPlayer");
-    }
+//    @PostConstruct
+//    private void doMyInit(){
+//        System.out.println("Doing my initialization MusicPlayer");
+//    }
+//
+//    @PreDestroy
+//    private void doMyDestroy() {
+//        System.out.println("Doing my destruction MusicPlayer");
+//    }
 
 }
