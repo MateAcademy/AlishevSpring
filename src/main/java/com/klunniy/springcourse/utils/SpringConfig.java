@@ -10,9 +10,9 @@ import java.util.List;
 /**
  * Этот класс содержит в себе конфигурацию spring приложения
  */
-@Configuration
-@ComponentScan("com.klunniy.springcourse")
-@PropertySource("classpath:musicPlayer.properties")
+@Configuration //пометим файл как конфигурационный
+@ComponentScan("com.klunniy.springcourse")  //это путь до наших компонентов
+@PropertySource("classpath:musicPlayer.properties") //указываем путь к файлу с нашими значениями
 public class SpringConfig {
 
     @Bean
