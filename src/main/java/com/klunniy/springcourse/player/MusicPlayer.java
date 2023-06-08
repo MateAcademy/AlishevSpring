@@ -1,11 +1,7 @@
-package com.klunniy.springcourse;
+package com.klunniy.springcourse.player;
 
 import com.klunniy.springcourse.enums.MusicEnum;
-import com.klunniy.springcourse.musicGenres.Music;
-import com.klunniy.springcourse.musicGenres.MusicB;
-import com.klunniy.springcourse.musicGenres.impl.arr12.ClassicalMusic;
-import com.klunniy.springcourse.musicGenres.impl.arr12.RockMusic;
-import com.klunniy.springcourse.song.Song;
+import com.klunniy.springcourse.typeOfMusic.MusicB;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;

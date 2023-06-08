@@ -1,6 +1,5 @@
 package com.klunniy.springcourse.song.impl;
 
-import com.klunniy.springcourse.musicGenres.Music;
 import com.klunniy.springcourse.song.Song;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;

@@ -1,10 +1,9 @@
 package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.enums.MusicEnum;
-import com.klunniy.springcourse.musicGenres.Music;
-import org.springframework.context.ApplicationContext;
+import com.klunniy.springcourse.player.MusicPlayer;
+import com.klunniy.springcourse.utils.SpringConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * @author Serhii Klunniy

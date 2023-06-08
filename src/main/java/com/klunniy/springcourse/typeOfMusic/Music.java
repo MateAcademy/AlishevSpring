@@ -1,6 +1,4 @@
-package com.klunniy.springcourse.musicGenres;
-
-import java.util.List;
+package com.klunniy.springcourse.typeOfMusic;
 
 /**
  * @author Serhii Klunniy

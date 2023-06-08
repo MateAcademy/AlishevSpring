@@ -1,17 +1,17 @@
-package com.klunniy.springcourse.musicGenres.impl;
+package com.klunniy.springcourse.typeOfMusic.impl;
 
-import com.klunniy.springcourse.musicGenres.Music;
+import com.klunniy.springcourse.typeOfMusic.Music;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 /**
  * @author Serhii Klunniy
  */
-@Component("rapBean")
+@Component("oldBean")
 @Scope("singleton")
-public class RapMusic implements Music {
+public class OldMusic implements Music {
     @Override
     public String getSong() {
-        return "Rap music song";
+        return "Old Music song";
     }
 }

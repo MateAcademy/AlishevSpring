@@ -1,6 +1,6 @@
-package com.klunniy.springcourse.musicGenres.impl.arr12;
+package com.klunniy.springcourse.typeOfMusic.impl;
 
-import com.klunniy.springcourse.musicGenres.MusicB;
+import com.klunniy.springcourse.typeOfMusic.MusicB;
 import com.klunniy.springcourse.song.Song;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

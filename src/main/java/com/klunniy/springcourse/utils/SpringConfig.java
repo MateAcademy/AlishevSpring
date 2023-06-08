@@ -1,4 +1,4 @@
-package com.klunniy.springcourse;
+package com.klunniy.springcourse.utils;
 
 import com.klunniy.springcourse.song.Song;
 import com.klunniy.springcourse.song.impl.*;
@@ -8,8 +8,8 @@ import java.util.Arrays;
 import java.util.List;
 
 @Configuration
-@PropertySource("classpath:musicPlayer.properties")
 @ComponentScan("com.klunniy.springcourse")
+@PropertySource("classpath:musicPlayer.properties")
 public class SpringConfig {
 
     @Bean
