@@ -15,8 +15,6 @@ import java.util.List;
 /**
  * @author Serhii Klunniy
  */
-@Component
-@Scope("singleton")
 public class RockMusic implements MusicB {
 
     @Value("${musicPlayer.name}")
@@ -25,10 +23,12 @@ public class RockMusic implements MusicB {
     @Value("${musicPlayer.volume}")
     private int volume;
 
-    @Autowired
     @Qualifier("rocklList")
     private List<Song> songList;
 
+    public RockMusic(@Qualifier("rocklList") List<Song> songList) {
+        this.songList = songList;
+    }
 
     @Override
     public void playSong() {

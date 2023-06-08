@@ -18,8 +18,6 @@ import javax.annotation.PreDestroy;
  */
 @Data
 @NoArgsConstructor
-@Component
-@Scope("prototype")
 public class MusicPlayer {
 
     @Value("${musicPlayer.name2}")
@@ -32,7 +30,6 @@ public class MusicPlayer {
 
     private MusicB music2;
 
-    @Autowired
     public MusicPlayer(@Qualifier("classicalMusic") MusicB music1,
                        @Qualifier("rockMusic") MusicB music2) {
         this.music1 = music1;
