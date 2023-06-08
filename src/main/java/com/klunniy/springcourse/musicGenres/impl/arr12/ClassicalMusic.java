@@ -47,5 +47,4 @@ public class ClassicalMusic implements MusicB {
         System.out.println("Doing my destruction ClassicalMusic");
     }
 
-
 }

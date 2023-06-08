@@ -2,12 +2,14 @@ package com.klunniy.springcourse;
 
 import com.klunniy.springcourse.enums.MusicEnum;
 import com.klunniy.springcourse.musicGenres.Music;
+import com.klunniy.springcourse.musicGenres.MusicB;
 import com.klunniy.springcourse.musicGenres.impl.arr12.ClassicalMusic;
 import com.klunniy.springcourse.musicGenres.impl.arr12.RockMusic;
 import com.klunniy.springcourse.song.Song;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -30,20 +32,21 @@ public class MusicPlayer {
     @Value("${musicPlayer.volume2}")
     private int volume;
 
-    private ClassicalMusic classicalMusic;
+    private MusicB music1;
 
-    private RockMusic rockMusic;
+    private MusicB music2;
 
     @Autowired
-    public MusicPlayer(ClassicalMusic classicalMusic, RockMusic rockMusic) {
-        this.classicalMusic = classicalMusic;
-        this.rockMusic = rockMusic;
+    public MusicPlayer(@Qualifier("classicalMusic") MusicB music1,
+                       @Qualifier("rockMusic") MusicB music2) {
+        this.music1 = music1;
+        this.music2 = music2;
     }
 
     public void playMusic(MusicEnum musicEnum) {
         if (musicEnum == MusicEnum.ROCK)
-            rockMusic.playSong();
-        else classicalMusic.playSong();
+            music2.playSong();
+        else music1.playSong();
     }
 
     public void musicPlayerConstants() {
