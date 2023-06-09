@@ -5,7 +5,7 @@ import com.klunniy.springcourse.utils.SpringConfig;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 /**
- * @author Serhii  Klunniy
+ * @author Serhii Klunniy
  */
 public class TestSpring {
     public static void main(String[] args) {
