@@ -37,19 +37,19 @@ public class SpringConfig {
 
     //три музыкальных жанра, в каждом по три песни:
     @Bean
-    @Scope("singleton")
+    @Scope("prototype")
     public ClassicalGenres classicalGenres() {
         return new ClassicalGenres(classicalList());
     }
 
     @Bean
-    @Scope("singleton")
+    @Scope("prototype")
     public PopGenres popGenres() {
         return new PopGenres(popList());
     }
 
     @Bean
-    @Scope("singleton")
+    @Scope("prototype")
     public RockGenres rockGenres() {
         return new RockGenres(rockList());
     }
