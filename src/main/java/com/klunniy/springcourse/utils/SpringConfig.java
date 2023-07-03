@@ -16,7 +16,7 @@ import java.util.List;
  * Этот класс содержит в себе конфигурацию spring приложения
  */
 @Configuration //пометим файл как конфигурационный
-//@ComponentScan("com.klunniy.springcourse")  //это путь до наших компонентов
+@ComponentScan("com.klunniy.springcourse")  //это путь до наших компонентов
 @PropertySource("classpath:musicPlayer.properties") //указываем путь к файлу с нашими значениями
 public class SpringConfig {
 
@@ -26,7 +26,6 @@ public class SpringConfig {
     public MusicPlayer musicPlayer() {
         return new MusicPlayer(musicGenresList());
     }
-
 
     //список музыкальных жанров:
     @Bean

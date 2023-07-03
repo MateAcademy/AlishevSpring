@@ -1,6 +1,7 @@
 package com.klunniy.springcourse.player;
 
 import com.klunniy.springcourse.musicGenres.MusicGenres;
+import com.klunniy.springcourse.musicGenres.impl.ClassicalGenres;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,7 +13,7 @@ import java.util.Random;
  */
 @Data
 @NoArgsConstructor
-public class MusicPlayer {
+public class MusicPlayer { // отвечает
 
     private List<MusicGenres> music;
 
